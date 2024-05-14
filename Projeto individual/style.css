@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@font-face {
+    font-family: 'OnePieceFont';
+    src: url('one_piece_font.ttf');
+}
 
 
 * {
     padding: 0;
     margin: 0;
-    font-family: "Poetsen One", sans-serif;
+    font-family: 'OnePieceFont';
 }
 
 .container {
@@ -12,24 +16,56 @@
     width: 100%;
 }
 
+.nav_bar {
+    background-color: #1C1C1C;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_bar_texto {
+    width: 60vh;
+    height: 100%;
+    font-size: 25px;
+    font-style: normal;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    margin-right: 20px;
+}   
+
+.nav_bar_img {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.nav_bar_img img {
+    width: 11vh;
+    height: 9vh;
+}
+
 .container2 {
-    background-image: url('../Mugiwaras.jpg');
+    background-image: url('../Projeto individual/Imagens/Mugiwaras.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
+    height: 90%;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 35px;
 }
 
 .container3 {
     width: 100%;
-    height: 55vh;
     display: flex;
     flex-direction: column;
-    gap: 40px;
     align-items: center;
     justify-content: center;
 }
@@ -37,21 +73,7 @@
 .container3 img {
     width: 40%;
     height: 27vh;
-}
-
-.container3 button {
-    background-color: #FF6347;
-    color: white;
-    border: solid 3px white;
-    width: 40vh;
-    height: 8vh;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.container3 button:hover {
-    background-color: #851a07;
-}
+}   
 
 .container4 {
     display: flex;
@@ -60,25 +82,27 @@
 }
 
 .container5 {
-    background-color: #FF6347;
-    border: solid 3px white;
+    background-color: #1C1C1C;
+    border: solid 4px #FF6347;
     color: white;
     border-radius: 15px;
-    width: 25vh;
-    height: 22vh;
+    width: 23vh;
+    height: 21vh;
     gap: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: bold;
 }
 
 .container5:hover {
-    background-color: #851a07;
+    background-color: rgb(34, 109, 163);
 }
 
 .container5 img {
     width: 15vh;
-    height: 14vh;
+    height: 13vh;
 }
