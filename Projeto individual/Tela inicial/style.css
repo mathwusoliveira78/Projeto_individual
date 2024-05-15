@@ -128,7 +128,7 @@ a {
     background-image: url("../Imagens/Mugiwaras.jpg");   
     background-size: cover;
     background-repeat: no-repeat;
-    height: 90%;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -144,7 +144,7 @@ a {
 
 .container7 img {
     height: 70%;
-    width: 70%;
+    width: 75%;
 }
 
 .container8 {
@@ -165,4 +165,42 @@ a {
     align-items: center;
     font-size: 30px;
     font-family: 'Poetsen One';
+}
+
+.container10 {
+    background-image: url("../Imagens/img_favoritos/wallpaper2.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 13vh;
+}
+
+.container11 {
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.container12 {
+    height: 19vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.container12 img {
+    width: 20vh;
+    height: 19vh;
+    border-radius: 10px;
+}
+
+.container12 img:hover {
+    opacity: 50%;
 }
