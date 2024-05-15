@@ -1,0 +1,74 @@
+<html>
+    <link rel="stylesheet" href="style.css">
+
+    <body>
+        <div class="container">
+
+            <div class="nav_bar" id="navbar">
+                <div class="nav_bar_img">
+                    <img src="../Imagens/icone_Luffy.png" alt="">
+                </div>
+
+                <div class="nav_bar_texto">
+                    <P>AONDE ASSISTIR</P>
+                    <p>|</p>
+                    <p>LOGIN</p>
+                    <p>|</p>
+                    <p>CADASTRO</p>
+                </div>
+            </div>
+
+            <div class="container2">
+
+                <div class="container3">
+                    <img src="../Imagens/One_Piece_Logo.webp" alt="">
+                </div>
+
+                <div class="container4">
+                    <a href="#sobre"><div class="container5">
+                        <img id="caveira" draggable="false" src="../Imagens/Icone.png" alt="">
+                        SOBRE
+                    </div></a>
+
+                    <div class="container5">
+                        <img draggable="false" src="../Imagens/icons8-star-100.png" alt="">
+                        FAVORITOS
+                    </div>
+
+                    <div class="container5">
+                        <img draggable="false" src="../Imagens/icons8-apple-arcade-100.png" alt="">
+                        JOGOS 
+                    </div>
+
+                    <div class="container5">
+                        <img draggable="false" src="../Imagens/icons8-dashboard-100.png" alt="">
+                        DASHBOARD
+                    </div>
+                </div>
+            </div>
+
+            <div class="container6" id="sobre">
+                <div class="container7">
+                    <img src="../Imagens/Macaco_luffy.webp" alt="">
+                </div>
+
+                <div class="container8">
+                    <div class="container9">
+                        One Piece é um anime japonês que conta a história de Monkey D. Luffy, um jovem que ganhou poderes de borracha após acidentalmente comer a fruta Akuma no Mi. Seu sonho é encontrar o tesouro One Piece e se tornar o Rei dos Piratas12. A série, que começou a ser exibida em 1999, já tem mais de 1000 episódios e é conhecida como o "anime infinito".
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 20) { 
+            navbar.style.backgroundColor = '#1C1C1C'; 
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+        }
+    });
+</script>
