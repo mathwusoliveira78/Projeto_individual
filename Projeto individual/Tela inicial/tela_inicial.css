@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+@font-face {
+    font-family: 'OnePieceFont';
+    src: url('../Fontes/one_piece_font.ttf');
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'OnePieceFont';
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    height: 100vh;
+    width: 100%;
+}
+
+.nav_bar {
+    background-color: transparent;
+    position: fixed;
+    transition: 0.2s;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+.nav_bar_texto {
+    width: 60vh;
+    height: 100%;
+    font-size: 25px;
+    font-style: normal;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 20px;
+}   
+
+.nav_bar_img {
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.nav_bar_img img {
+    width: 11vh;
+    height: 9vh;
+}
+
+.container_background {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+
+.video_background {
+    right: 0; 
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video_background img {
+    z-index: 1;
+    position: relative;
+    width: 50%;
+    height: 35vh;
+}
+
+.video_background video {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}

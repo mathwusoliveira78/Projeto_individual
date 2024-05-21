@@ -1,0 +1,44 @@
+<html>
+    <link rel="stylesheet" href="tela_inicial.css">
+
+    <body>
+        <div class="container" id="inicio">
+
+            <div class="nav_bar" id="navbar">
+                <div class="nav_bar_img">
+                    <img src="../Imagens/icone_Luffy.png" alt="">
+                </div>
+
+                <div class="nav_bar_texto">
+                    <P>AONDE ASSISTIR</P>
+                    <p>|</p>
+                    <p>LOGIN</p>
+                    <p>|</p>
+                    <p>CADASTRO</p>
+                </div>
+            </div>
+
+            <div class="container_background">
+                <div class="video_background">
+                    <img src="../Imagens/Imagens_tela_inicial/One_Piece_Logo.webp" alt="">
+                    <video autoplay loop muted>
+                        <source src="../Imagens/Imagens_tela_inicial/video.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    window.addEventListener('scroll', function() {
+        var navbar = document.getElementById('navbar');
+        if (window.scrollY > 20) { 
+            navbar.style.backgroundColor = '#1C1C1C'; 
+            botaoInicio.style.display = 'block'
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            botaoInicio.style.display = 'none'
+        }
+    });
+</script>
