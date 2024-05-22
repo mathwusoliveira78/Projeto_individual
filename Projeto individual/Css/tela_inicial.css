@@ -23,31 +23,65 @@ html {
 .nav_bar {
     width: 100%;
     height: 10%;
-
     background-color: rgb(0, 0, 0, 0.7);
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     z-index: 2;
-    position: absolute;
+    position: fixed;
+    transition: 0.2s;
 }
 
 .nav_bar_texto {
     width: 60vh;
     height: 100%;
-
     font-style: normal;
     font-size: 28px;
     font-weight: bold;
     color: white;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 30px;
 }   
+
+a {
+    text-decoration: none;
+}
+
+li {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    list-style-type: none;  
+}
+  
+  li::before {
+    margin-left: auto;
+  }
+  
+  li::after, li::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: WHITE;
+    display: block;
+    transition: 0.5s;
+  }
+  
+  li:hover::after, li:hover::before {
+    width: 100%;
+  }
+
+.nav_bar_texto img {
+    height: 7vh;
+    width: 5vw;
+    position: absolute;
+    left: 2%;
+}
 
 .container_background {
     background-size: cover;
