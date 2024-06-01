@@ -34,12 +34,14 @@
                         <input type="password" placeholder="Confirmação de senha" id="confirmacao_senha_input">
                         <button onclick="cadastrar()">Cadastrar</button>
                     </div>
+
+                    <div id="content_erro">
+          
+                    </div>
                 </div>
             </div>
 
-            <div id="div_aguardar" class="loading-div">
-              <img src="./assets/Imagens/" id="loading-gif" />
-            </div>
+            
 
           </div>
     </body>
@@ -61,10 +63,45 @@
       senhaVar == "" ||
       confirmacaoSenhaVar == ""
     ) {
-      alert("Mensagem de erro para todos os campos em branco");
+      content_erro.innerHTML = "Insira valores em todos os campos!";
 
       return false;
     } 
+
+    if(nomeVar.length < 3) {
+      content_erro.innerHTML = 'Nome deve ter pelo menos 3 digitos!'
+    } 
+
+    if ((emailVar.indexOf("@") || emailVar.indexOf(".")) == -1) {
+      content_erro.innerHTML = `Email deve conter "@" e "." !`;
+    }
+
+    if(senhaVar.length < 6) {
+      content_erro.innerHTML = 'Senha deve conter pelo menos 6 digitos'
+    } else if (senhaVar != confirmacaoSenhaVar) {
+      content_erro.innerHTML = `A senha e confirmação devem ser iguais!`;
+    }
+
+    let verificaNumeroSenha = 0;
+    let verificaNumeroNome = 0;
+    for(let i = 0; i <= 9; i++) {
+
+      if(senhaVar.indexOf(i) != -1) {
+        verificaNumeroSenha++
+      } 
+
+      if(nomeVar.indexOf(i) != -1) {
+        verificaNumeroNome++
+      }
+    }
+
+    if (verificaNumeroSenha == 0){
+        content_erro.innerHTML = "Senha deve conter pelo menos um numero!"
+    }
+
+    if(verificaNumeroNome > 0) {
+      content_erro.innerHTML = "Nome não deve conter numeros"
+    }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {

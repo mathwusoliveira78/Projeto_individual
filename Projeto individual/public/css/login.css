@@ -17,13 +17,12 @@
     color: white;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    gap: 30px;
+    gap: 20px;
 }
 
-.content_card_titulo {
-    margin-top: 50px;
-}
+
 
 .content_card_titulo span {
     font-size: 40px;
@@ -31,7 +30,7 @@
 }
 
 .content_card_ipts {
-    height: 70%;
+    height: 50%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -65,4 +64,9 @@
 
 .content_card_ipts button:hover {
     background-color: red;
+}
+
+#content_erro {
+    font-size: 30px;
+    font-weight: bold;
 }

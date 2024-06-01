@@ -34,6 +34,10 @@
                     <input type="password" placeholder="Senha" id="senha_input">
                     <button onclick="entrar()">Entrar</button>
                 </div>
+
+                <div id="content_erro">
+
+                </div>
             </div>
         </div>
     </div>
@@ -48,8 +52,16 @@
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert("Mensagem de erro para todos os campos em branco");
+            content_erro.innerHTML = "Insira valores em todos os campos!";
             return false;
+        }
+
+        if(senhaVar.length < 6) {
+            content_erro.innerHTML = 'Senha deve conter pelo menos 6 digitos'
+        }
+
+        if ((emailVar.indexOf("@") || emailVar.indexOf(".")) == -1) {
+            content_erro.innerHTML = `Email deve conter "@" e "." !`;
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -78,7 +90,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./index.html";
+                        window.location = "./game.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

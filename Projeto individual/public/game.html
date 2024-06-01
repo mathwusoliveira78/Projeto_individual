@@ -15,9 +15,6 @@
             <div class="nav_bar">
                 <div class="nav_bar_texto">
                     <img src="./assets/Imagens/icone_Luffy.png" alt="">
-                    <a href="./sobre.html"><li>SOBRE</li></a>
-                    <a href="./cadastro.html"><li>CADASTRO</li></a>
-                    <a href="./login.html"><li>LOGIN</li></a>
                     <a href=""><li>DASHBOARD</li></a>
                 </div>
             </div>
@@ -74,10 +71,11 @@
                 </div>
 
                 <div class="game_personagens_sorteio">
-                    <div class="game_personagens_sorteio_img">
-                        <img id="sorteio" src="./assets/Imagens/icone_Luffy.png" alt="">
-                    </div>
-                    <button onclick="sortearIMG()">SORTEAR</button>
+                        <div id="div_img" class="game_personagens_sorteio_img">
+                            <img id="sorteio" src="./assets/Imagens/icone_Luffy.png" alt="">
+                        </div>
+                    <div id="game_personagens_finalizarJogo">Belo time que você montou parabens, deseja ir para dashboard ver seus resultados?</div>
+                    <button onclick="sortearIMG()" id="button">SORTEAR</button>
                 </div>
             </div>
         </div>
@@ -151,68 +149,115 @@
 
     let numeroAleatorio = 0
     let limiteSorteio = 0;
+    let verificaFinalGame = 0;
+    game_personagens_finalizarJogo.style.display = 'none'
 
     function sortearIMG () {
         limiteSorteio++
 
-        if(limiteSorteio <= 9) {
+        if(verificaFinalGame != 6) {
+            if(limiteSorteio <= 9) {
             numeroAleatorio = Math.floor(Math.random() * 61);
             sorteio.src = listaImg[numeroAleatorio];
-        }
+            }
+        } 
     }
+
 
 
     let contadorCapitao = 0;
     function atualizaImg_Capitao() {
         contadorCapitao++;
+        verificaFinalGame++;
 
         if(contadorCapitao <= 1) {
             img_capitao.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 
     let contadorCombatente = 0;
     function atualizaImg_Combatente() {
         contadorCombatente++;
+        verificaFinalGame++;
 
         if(contadorCombatente <= 1) {
             img_combatente.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 
     let contadorNavegador = 0;
     function atualizaImg_Navegador() {
         contadorNavegador++
+        verificaFinalGame++;
 
         if(contadorNavegador <= 1) {
             img_navegador.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 
     let contadorCarpinteiro = 0;
     function atualizaImg_Carpinteiro() {
         contadorCarpinteiro++;
+        verificaFinalGame++;
 
         if(contadorCarpinteiro <= 1) {
             img_carpinteiro.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 
     let contadorCozinheiro = 0;
     function atualizaImg_Cozinheiro() {
         contadorCozinheiro++;
+        verificaFinalGame++;
 
         if(contadorCozinheiro <= 1) {
             img_cozinheiro.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 
     let contadorMedico = 0;
     function atualizaImg_Medico() {
         contadorMedico++
+        verificaFinalGame++;
 
         if(contadorMedico <= 1) {
             img_medico.src = listaImg[numeroAleatorio];
+        }
+
+        if(verificaFinalGame == 6) {
+            button.innerHTML = '<a href="./index.html">DASHBOARD</a>';
+            div_img.style.display = 'none';
+            game_personagens_finalizarJogo.style.display = 'block';
         }
     }
 </script>
