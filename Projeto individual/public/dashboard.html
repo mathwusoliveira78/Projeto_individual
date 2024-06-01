@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Op Team | OnePiece</title>
+
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/dashboard.css">
+        <link rel="shortcut icon" href="./assets/Imagens/icone_Luffy.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="container" id="inicio">
+
+            <div class="nav_bar">
+                <div class="nav_bar_texto">
+                    <img src="./assets/Imagens/icone_Luffy.png" alt="">
+                    <a href="./game.html"><li>OP TEAM</li></a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="content_kpi">
+                    <div class="content_kpi_info" id="kpi_media">
+                        <div class="content_kpi_texto">
+                            <span>A media dos participantes foi de: 600</span>
+                        </div>
+                    </div>
+
+                    <div class="content_kpi_info" id="kpi_resultado">
+                        <div class="content_kpi_texto">
+                            <span>Sua pontuação foi de 800, maior de 90% dos usuarios</span>
+                        </div>
+                    </div>
+
+                    <div class="content_kpi_info" id="kpi_personagem">
+                        <div class="content_kpi_texto">
+                            <span>Personagem mais escolhido: Zoro</span>
+                            <span>Personagem menos escolhido: Spandan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content_grafico">
+                    <div class="grafico">
+                        <div class="grafico_canvas">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="grafico2">
+                        <div class="grafico_canvas">
+                            <canvas id="myCharta"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const ctx = document.getElementById('myChart');
+    const ctx2 = document.getElementById('myCharta');
+
+    Chart.defaults.color = 'white';
+    Chart.defaults.font.size = 15;
+    Chart.defaults.borderColor = 'black';
+    Chart.defaults.font.family = 'Poetsen One'; 
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['> 100', '> 200', '> 300', '> 400', '> 500', '> 600'],
+        datasets: [{
+          backgroundColor: '#F4B01E',
+          label: 'Media de pontuação dos participantes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    new Chart(ctx2, {
+      type: 'pie',
+      data: {
+        labels: ['Zoro', 'Luffy', 'Barba Branca'],
+        datasets: [{
+          backgroundColor: '#2D8BBA',
+          label: 'Personagens mais escolhidos',
+          data: [12, 19, 3],
+          borderWidth: 1
+        }]
+      }
+    });
+  </script>
