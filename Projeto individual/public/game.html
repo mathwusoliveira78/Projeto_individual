@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Op Team | OnePiece</title>
+
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/game.css">
+        <link rel="shortcut icon" href="./assets/Imagens/icone_Luffy.png" type="image/x-icon">
+    </head>
+
+    <body>
+        <div class="container" id="inicio">
+
+            <div class="nav_bar">
+                <div class="nav_bar_texto">
+                    <img src="./assets/Imagens/icone_Luffy.png" alt="">
+                    <a href="./sobre.html"><li>SOBRE</li></a>
+                    <a href="./cadastro.html"><li>CADASTRO</li></a>
+                    <a href="./login.html"><li>LOGIN</li></a>
+                    <a href=""><li>DASHBOARD</li></a>
+                </div>
+            </div>
+
+            <div class="container_game">
+                <div class="game_titulo">
+                    <span>OP TEAM</span>
+                </div>
+
+                <div class="game_personagens">
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Capitao()">
+                            <img id="img_capitao" src="./assets/Imagens/Icone.png" alt="">
+                        </div>
+                        <span>CAPITÃO</span>
+                    </div>
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Combatente()">
+                            <img id="img_combatente" src="./assets/Imagens/Imagens_game/icons8-sword-96.png" alt="">
+                        </div>
+                        <span>COMBATENTE</span>
+                    </div>
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Navegador()">
+                            <img id="img_navegador" src="./assets/Imagens/Imagens_game/icons8-ship-wheel-96.png" alt="">
+                        </div>
+                        <span>NAVEGADOR</span>
+                    </div>
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Carpinteiro()">
+                            <img id="img_carpinteiro" src="./assets/Imagens/Imagens_game/icons8-hammer-96.png" alt="">
+                        </div>
+                        <span>CARPINTEIRO</span>
+                    </div>
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Cozinheiro()">
+                            <img id="img_cozinheiro" src="./assets/Imagens/Imagens_game/icons8-fork-96.png" alt="">
+                        </div>
+                        <span>COZINHEIRO</span>
+                    </div>
+
+                    <div class="game_personagens_info">
+                        <div class="game_personagens_img" onclick="atualizaImg_Medico()">
+                            <img id="img_medico" src="./assets/Imagens/Imagens_game/icons8-stethoscope-96.png" alt="">
+                        </div>
+                        <span>MEDICO</span>
+                    </div>
+
+                </div>
+
+                <div class="game_personagens_sorteio">
+                    <div class="game_personagens_sorteio_img">
+                        <img id="sorteio" src="./assets/Imagens/icone_Luffy.png" alt="">
+                    </div>
+                    <button onclick="sortearIMG()">SORTEAR</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<script>
+    const listaImg = 
+    ['./assets/Imagens/Imagens_game/ace.jpg',
+     './assets/Imagens/Imagens_game/bepo.jpg',
+     './assets/Imagens/Imagens_game/chopper.jpg',
+     './assets/Imagens/Imagens_game/crocus.jpg',
+     './assets/Imagens/Imagens_game/docq.jpg',
+     './assets/Imagens/Imagens_game/franky.jpg',
+     './assets/Imagens/Imagens_game/hatchan.jpg',
+     './assets/Imagens/Imagens_game/hiruluk.jpg',
+     './assets/Imagens/Imagens_game/hogback.jpg',
+     './assets/Imagens/Imagens_game/tom.jpg',
+     './assets/Imagens/Imagens_game/Streusen.jpeg',
+     './assets/Imagens/Imagens_game/sanji.jpg',
+     './assets/Imagens/Imagens_game/pudding.jpg',
+     './assets/Imagens/Imagens_game/paulie.jpg',
+     './assets/Imagens/Imagens_game/patty.jpeg',
+     './assets/Imagens/Imagens_game/nami.jpg',
+     './assets/Imagens/Imagens_game/law.jpg',
+     './assets/Imagens/Imagens_game/laffite.jpg',
+     './assets/Imagens/Imagens_game/kureha.jpg',
+     './assets/Imagens/Imagens_game/zeff.jpg',
+     './assets/Imagens/Imagens_game/aladdin.webp',
+     './assets/Imagens/Imagens_game/luffy.jpg',
+     './assets/Imagens/Imagens_game/zoro.jpg',
+     './assets/Imagens/Imagens_game/brook.jpg',
+     './assets/Imagens/Imagens_game/robin.jpg',
+     './assets/Imagens/Imagens_game/jinbei.jpg',
+     './assets/Imagens/Imagens_game/usopp.jpg',
+     './assets/Imagens/Imagens_game/barba branca.jpg',
+     './assets/Imagens/Imagens_game/marco.jpg',
+     './assets/Imagens/Imagens_game/oden.jpg',
+     './assets/Imagens/Imagens_game/jozu.jpg',
+     './assets/Imagens/Imagens_game/roger.jpg',
+     './assets/Imagens/Imagens_game/rayleigh.jpg',
+     './assets/Imagens/Imagens_game/shanks.jpg',
+     './assets/Imagens/Imagens_game/buggy.jpg',
+     './assets/Imagens/Imagens_game/barba negra.jpg',
+     './assets/Imagens/Imagens_game/burgers.jpg',
+     './assets/Imagens/Imagens_game/aokiji.jpg',
+     './assets/Imagens/Imagens_game/garp.jpg',
+     './assets/Imagens/Imagens_game/sengoku.jpg',
+     './assets/Imagens/Imagens_game/momonga.jpg',
+     './assets/Imagens/Imagens_game/vergo.jpg',
+     './assets/Imagens/Imagens_game/bartolomeu.jpg',
+     './assets/Imagens/Imagens_game/kaido.jpg',
+     './assets/Imagens/Imagens_game/king.jpg',
+     './assets/Imagens/Imagens_game/queen.jpg',
+     './assets/Imagens/Imagens_game/pageone.jpg',
+     './assets/Imagens/Imagens_game/sazaki.jpg',
+     './assets/Imagens/Imagens_game/hawkins.jpg',
+     './assets/Imagens/Imagens_game/bigmom.jpg',
+     './assets/Imagens/Imagens_game/katakuri.jpg',
+     './assets/Imagens/Imagens_game/perospero.jpg',
+     './assets/Imagens/Imagens_game/cracker.jpg',
+     './assets/Imagens/Imagens_game/doflamingo.jpg',
+     './assets/Imagens/Imagens_game/smoker.jpg',
+     './assets/Imagens/Imagens_game/dragon.jpg',
+     './assets/Imagens/Imagens_game/kuma.jpg',
+     './assets/Imagens/Imagens_game/ivankov.jpg',
+     './assets/Imagens/Imagens_game/sabo.jpg',
+     './assets/Imagens/Imagens_game/kid.jpg',
+     './assets/Imagens/Imagens_game/killer.jpg'
+    ];
+
+    let numeroAleatorio = 0
+    let limiteSorteio = 0;
+
+    function sortearIMG () {
+        limiteSorteio++
+
+        if(limiteSorteio <= 9) {
+            numeroAleatorio = Math.floor(Math.random() * 61);
+            sorteio.src = listaImg[numeroAleatorio];
+        }
+    }
+
+
+    let contadorCapitao = 0;
+    function atualizaImg_Capitao() {
+        contadorCapitao++;
+
+        if(contadorCapitao <= 1) {
+            img_capitao.src = listaImg[numeroAleatorio];
+        }
+    }
+
+    let contadorCombatente = 0;
+    function atualizaImg_Combatente() {
+        contadorCombatente++;
+
+        if(contadorCombatente <= 1) {
+            img_combatente.src = listaImg[numeroAleatorio];
+        }
+    }
+
+    let contadorNavegador = 0;
+    function atualizaImg_Navegador() {
+        contadorNavegador++
+
+        if(contadorNavegador <= 1) {
+            img_navegador.src = listaImg[numeroAleatorio];
+        }
+    }
+
+    let contadorCarpinteiro = 0;
+    function atualizaImg_Carpinteiro() {
+        contadorCarpinteiro++;
+
+        if(contadorCarpinteiro <= 1) {
+            img_carpinteiro.src = listaImg[numeroAleatorio];
+        }
+    }
+
+    let contadorCozinheiro = 0;
+    function atualizaImg_Cozinheiro() {
+        contadorCozinheiro++;
+
+        if(contadorCozinheiro <= 1) {
+            img_cozinheiro.src = listaImg[numeroAleatorio];
+        }
+    }
+
+    let contadorMedico = 0;
+    function atualizaImg_Medico() {
+        contadorMedico++
+
+        if(contadorMedico <= 1) {
+            img_medico.src = listaImg[numeroAleatorio];
+        }
+    }
+</script>
