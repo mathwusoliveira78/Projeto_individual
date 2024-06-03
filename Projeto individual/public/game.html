@@ -28,42 +28,42 @@
                 <div class="game_personagens">
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Capitao()">
+                        <div class="game_personagens_img" id="atualizaImg_Capitao" onclick="">
                             <img id="img_capitao" src="./assets/Imagens/Icone.png" alt="">
                         </div>
                         <span>CAPITÃO</span>
                     </div>
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Combatente()">
+                        <div class="game_personagens_img" id="atualizaImg_Combatente" onclick="">
                             <img id="img_combatente" src="./assets/Imagens/Imagens_game/icons8-sword-96.png" alt="">
                         </div>
                         <span>COMBATENTE</span>
                     </div>
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Navegador()">
+                        <div class="game_personagens_img" id="atualizaImg_Navegador" onclick="">
                             <img id="img_navegador" src="./assets/Imagens/Imagens_game/icons8-ship-wheel-96.png" alt="">
                         </div>
                         <span>NAVEGADOR</span>
                     </div>
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Carpinteiro()">
+                        <div class="game_personagens_img" id="atualizaImg_Carpinteiro" onclick="">
                             <img id="img_carpinteiro" src="./assets/Imagens/Imagens_game/icons8-hammer-96.png" alt="">
                         </div>
                         <span>CARPINTEIRO</span>
                     </div>
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Cozinheiro()">
+                        <div class="game_personagens_img" id="atualizaImg_Cozinheiro" onclick="">
                             <img id="img_cozinheiro" src="./assets/Imagens/Imagens_game/icons8-fork-96.png" alt="">
                         </div>
                         <span>COZINHEIRO</span>
                     </div>
 
                     <div class="game_personagens_info">
-                        <div class="game_personagens_img" onclick="atualizaImg_Medico()">
+                        <div class="game_personagens_img" id="atualizaImg_Medico" onclick="">
                             <img id="img_medico" src="./assets/Imagens/Imagens_game/icons8-stethoscope-96.png" alt="">
                         </div>
                         <span>MEDICO</span>
@@ -258,8 +258,8 @@ function verificaFinal() {
     }
 }
 
-let contadorCapitao = 0;
 let contadorPersonagem = 0;
+let contadorCapitao = 0;
 function atualizaImg_Capitao() {
     contabilizaPonto()
     contadorCapitao++;
@@ -271,7 +271,13 @@ function atualizaImg_Capitao() {
     }
 
     verificaFinal()
-}
+} 
+document.getElementById('atualizaImg_Capitao').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Capitao();
+    }
+};
+
 
 let contadorCombatente = 0;
 function atualizaImg_Combatente() {
@@ -285,6 +291,12 @@ function atualizaImg_Combatente() {
 
     verificaFinal()
 }
+document.getElementById('atualizaImg_Combatente').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Combatente();
+    }
+};
+
 
 let contadorNavegador = 0;
 function atualizaImg_Navegador() {
@@ -298,6 +310,12 @@ function atualizaImg_Navegador() {
 
     verificaFinal()
 }
+document.getElementById('atualizaImg_Navegador').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Navegador();
+    }
+};
+
 
 let contadorCarpinteiro = 0;
 function atualizaImg_Carpinteiro() {
@@ -311,6 +329,12 @@ function atualizaImg_Carpinteiro() {
 
     verificaFinal()
 }
+document.getElementById('atualizaImg_Carpinteiro').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Carpinteiro();
+    }
+};
+
 
 let contadorCozinheiro = 0;
 function atualizaImg_Cozinheiro() {
@@ -324,6 +348,12 @@ function atualizaImg_Cozinheiro() {
 
     verificaFinal()
 }
+document.getElementById('atualizaImg_Cozinheiro').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Cozinheiro();
+    }
+};
+
 
 let contadorMedico = 0;
 function atualizaImg_Medico() {
@@ -337,4 +367,9 @@ function atualizaImg_Medico() {
 
     verificaFinal()
 }
+document.getElementById('atualizaImg_Medico').onclick = function() {
+    if(limiteSorteio >= 1) {
+        atualizaImg_Medico();
+    }
+};
 </script>
