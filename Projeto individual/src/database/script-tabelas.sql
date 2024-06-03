@@ -6,17 +6,29 @@
 comandos para mysql server
 */
 
-CREATE DATABASE aquatech;
+create database mkgpiece;
+use mkgpiece;
 
-USE aquatech;
+create table usuario (
+	idUsuario int primary key auto_increment,
+    nome varchar(45),
+    email varchar(45),
+    senha varchar(45)
+);
 
-show tables;
+create table game (
+	idGame int primary key auto_increment,
+    time varchar(45)
+) auto_increment = 5000;
 
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table resultado_game (
+	idResultadoGame int,
+	fkUsuario int,
+    fkGame int,
+    constraint fk_Usuario foreign key (fkUsuario) references usuario(idUsuario),
+    constraint fk_Game foreign key (fkGame) references game(idGame),
+    primary key(idResultadoGame, fkUsuario, fkGame),
+	pontuacao varchar(45)
 );
 
 select * from usuario;

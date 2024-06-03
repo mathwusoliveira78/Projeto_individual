@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Op Team | OnePiece</title>
 
+        <script src="./js/quizScript.js"></script>
         <link rel="stylesheet" href="./css/index.css">
         <link rel="stylesheet" href="./css/game.css">
         <link rel="shortcut icon" href="./assets/Imagens/icone_Luffy.png" type="image/x-icon">
@@ -84,251 +85,256 @@
 
 <script>
     const listaImg = 
-    [
-     './assets/Imagens/Imagens_game/hiruluk.jpg',
-     './assets/Imagens/Imagens_game/tom.jpg',
-     './assets/Imagens/Imagens_game/Streusen.jpeg',
-     './assets/Imagens/Imagens_game/paulie.jpg',
-     './assets/Imagens/Imagens_game/patty.jpeg',
-     './assets/Imagens/Imagens_game/kureha.jpg',
+[
+ './assets/Imagens/Imagens_game/hiruluk.jpg',
+ './assets/Imagens/Imagens_game/tom.jpg',
+ './assets/Imagens/Imagens_game/Streusen.jpeg',
+ './assets/Imagens/Imagens_game/paulie.jpg',
+ './assets/Imagens/Imagens_game/patty.jpeg',
+ './assets/Imagens/Imagens_game/kureha.jpg',
 
-     './assets/Imagens/Imagens_game/kyros.jpg',
-     './assets/Imagens/Imagens_game/bellamy.jpg',
-     './assets/Imagens/Imagens_game/hatchan.jpg',
-     './assets/Imagens/Imagens_game/crocus.jpg',
-     './assets/Imagens/Imagens_game/pudding.jpg',
-     './assets/Imagens/Imagens_game/aladdin.webp',
-     './assets/Imagens/Imagens_game/hogback.jpg',
+ './assets/Imagens/Imagens_game/kyros.jpg',
+ './assets/Imagens/Imagens_game/bellamy.jpg',
+ './assets/Imagens/Imagens_game/hatchan.jpg',
+ './assets/Imagens/Imagens_game/crocus.jpg',
+ './assets/Imagens/Imagens_game/pudding.jpg',
+ './assets/Imagens/Imagens_game/aladdin.webp',
+ './assets/Imagens/Imagens_game/hogback.jpg',
 
-     './assets/Imagens/Imagens_game/ivankov.jpg',
-     './assets/Imagens/Imagens_game/zeff.jpg',
-     './assets/Imagens/Imagens_game/nami.jpg',
-     './assets/Imagens/Imagens_game/cavendish.jpg',
-     './assets/Imagens/Imagens_game/tashigi.jpg',
-     './assets/Imagens/Imagens_game/senhorpink.jpg',
+ './assets/Imagens/Imagens_game/ivankov.jpg',
+ './assets/Imagens/Imagens_game/zeff.jpg',
+ './assets/Imagens/Imagens_game/nami.jpg',
+ './assets/Imagens/Imagens_game/cavendish.jpg',
+ './assets/Imagens/Imagens_game/tashigi.jpg',
+ './assets/Imagens/Imagens_game/senhorpink.jpg',
 
-     './assets/Imagens/Imagens_game/neptune.jpg',
-     './assets/Imagens/Imagens_game/kin.jpg',
-     './assets/Imagens/Imagens_game/caesar.jpg',
-     './assets/Imagens/Imagens_game/buggy.jpg',
-     './assets/Imagens/Imagens_game/perona.jpg',
-     './assets/Imagens/Imagens_game/laffite.jpg',
-     './assets/Imagens/Imagens_game/chopper.jpg',
-     './assets/Imagens/Imagens_game/docq.jpg',
-     './assets/Imagens/Imagens_game/smoker.jpg',
-     './assets/Imagens/Imagens_game/franky.jpg',
-     './assets/Imagens/Imagens_game/kyros.jpg',
-     './assets/Imagens/Imagens_game/moria.jpg',
+ './assets/Imagens/Imagens_game/neptune.jpg',
+ './assets/Imagens/Imagens_game/kin.jpg',
+ './assets/Imagens/Imagens_game/caesar.jpg',
+ './assets/Imagens/Imagens_game/buggy.jpg',
+ './assets/Imagens/Imagens_game/perona.jpg',
+ './assets/Imagens/Imagens_game/laffite.jpg',
+ './assets/Imagens/Imagens_game/chopper.jpg',
+ './assets/Imagens/Imagens_game/docq.jpg',
+ './assets/Imagens/Imagens_game/smoker.jpg',
+ './assets/Imagens/Imagens_game/franky.jpg',
+ './assets/Imagens/Imagens_game/kyros.jpg',
+ './assets/Imagens/Imagens_game/moria.jpg',
 
-     './assets/Imagens/Imagens_game/clay.jpg',
-     './assets/Imagens/Imagens_game/hody.jpg',
-     './assets/Imagens/Imagens_game/apoo.jpg',
-     './assets/Imagens/Imagens_game/crocodile.jpg',
-     './assets/Imagens/Imagens_game/koby.jpg',
-     './assets/Imagens/Imagens_game/momonga.jpg',
-     './assets/Imagens/Imagens_game/vergo.jpg',
-     './assets/Imagens/Imagens_game/pageone.jpg',
-     './assets/Imagens/Imagens_game/bepo.jpg',
-     './assets/Imagens/Imagens_game/perospero.jpg',
-     './assets/Imagens/Imagens_game/cracker.jpg',
+ './assets/Imagens/Imagens_game/clay.jpg',
+ './assets/Imagens/Imagens_game/hody.jpg',
+ './assets/Imagens/Imagens_game/apoo.jpg',
+ './assets/Imagens/Imagens_game/crocodile.jpg',
+ './assets/Imagens/Imagens_game/koby.jpg',
+ './assets/Imagens/Imagens_game/momonga.jpg',
+ './assets/Imagens/Imagens_game/vergo.jpg',
+ './assets/Imagens/Imagens_game/pageone.jpg',
+ './assets/Imagens/Imagens_game/bepo.jpg',
+ './assets/Imagens/Imagens_game/perospero.jpg',
+ './assets/Imagens/Imagens_game/cracker.jpg',
 
-     './assets/Imagens/Imagens_game/usopp.jpg',
-     './assets/Imagens/Imagens_game/bonney.jpg',
-     './assets/Imagens/Imagens_game/hancock.jpg',
-     './assets/Imagens/Imagens_game/ace.jpg',
-     './assets/Imagens/Imagens_game/robin.jpg',
-     './assets/Imagens/Imagens_game/kaku.jpg',
-     './assets/Imagens/Imagens_game/brook.jpg',
-     './assets/Imagens/Imagens_game/jinbei.jpg',
-     './assets/Imagens/Imagens_game/enel.jpg',
-     './assets/Imagens/Imagens_game/bartolomeu.jpg',
-     './assets/Imagens/Imagens_game/hawkins.jpg',
-     './assets/Imagens/Imagens_game/burgers.jpg',
-     './assets/Imagens/Imagens_game/kuma.jpg',
-     './assets/Imagens/Imagens_game/killer.jpg',
+ './assets/Imagens/Imagens_game/usopp.jpg',
+ './assets/Imagens/Imagens_game/bonney.jpg',
+ './assets/Imagens/Imagens_game/hancock.jpg',
+ './assets/Imagens/Imagens_game/ace.jpg',
+ './assets/Imagens/Imagens_game/robin.jpg',
+ './assets/Imagens/Imagens_game/kaku.jpg',
+ './assets/Imagens/Imagens_game/brook.jpg',
+ './assets/Imagens/Imagens_game/jinbei.jpg',
+ './assets/Imagens/Imagens_game/enel.jpg',
+ './assets/Imagens/Imagens_game/bartolomeu.jpg',
+ './assets/Imagens/Imagens_game/hawkins.jpg',
+ './assets/Imagens/Imagens_game/burgers.jpg',
+ './assets/Imagens/Imagens_game/kuma.jpg',
+ './assets/Imagens/Imagens_game/killer.jpg',
 
-     './assets/Imagens/Imagens_game/jozu.jpg',
-     './assets/Imagens/Imagens_game/queen.jpg',
-     './assets/Imagens/Imagens_game/law.jpg',
-     './assets/Imagens/Imagens_game/fujitora.jpg',
-     './assets/Imagens/Imagens_game/sanji.jpg',
-     './assets/Imagens/Imagens_game/katakuri.jpg',
-     './assets/Imagens/Imagens_game/sabo.jpg',
-     './assets/Imagens/Imagens_game/vista.jpg',
-     './assets/Imagens/Imagens_game/rob lucci.jpg',
-     './assets/Imagens/Imagens_game/doflamingo.jpg',
-     './assets/Imagens/Imagens_game/marco.jpg',
-     './assets/Imagens/Imagens_game/magellan.jpg',
+ './assets/Imagens/Imagens_game/jozu.jpg',
+ './assets/Imagens/Imagens_game/queen.jpg',
+ './assets/Imagens/Imagens_game/law.jpg',
+ './assets/Imagens/Imagens_game/fujitora.jpg',
+ './assets/Imagens/Imagens_game/sanji.jpg',
+ './assets/Imagens/Imagens_game/katakuri.jpg',
+ './assets/Imagens/Imagens_game/sabo.jpg',
+ './assets/Imagens/Imagens_game/vista.jpg',
+ './assets/Imagens/Imagens_game/rob lucci.jpg',
+ './assets/Imagens/Imagens_game/doflamingo.jpg',
+ './assets/Imagens/Imagens_game/marco.jpg',
+ './assets/Imagens/Imagens_game/magellan.jpg',
 
-     './assets/Imagens/Imagens_game/aokiji.jpg',
-     './assets/Imagens/Imagens_game/kizaru.jpg',
-     './assets/Imagens/Imagens_game/yasopp.jpg',
-     './assets/Imagens/Imagens_game/kid.jpg',
-     './assets/Imagens/Imagens_game/bigmom.jpg',
-     './assets/Imagens/Imagens_game/king.jpg',
+ './assets/Imagens/Imagens_game/aokiji.jpg',
+ './assets/Imagens/Imagens_game/kizaru.jpg',
+ './assets/Imagens/Imagens_game/yasopp.jpg',
+ './assets/Imagens/Imagens_game/kid.jpg',
+ './assets/Imagens/Imagens_game/bigmom.jpg',
+ './assets/Imagens/Imagens_game/king.jpg',
 
-     './assets/Imagens/Imagens_game/sengoku.jpg',
-     './assets/Imagens/Imagens_game/akainu.jpg',
-     './assets/Imagens/Imagens_game/barba negra.jpg',
-     './assets/Imagens/Imagens_game/oden.jpg',
-     './assets/Imagens/Imagens_game/dragon.jpg',
-     './assets/Imagens/Imagens_game/rayleigh.jpg',
-     './assets/Imagens/Imagens_game/mihawk.jpg',
-     './assets/Imagens/Imagens_game/beckman.jpg',
-     './assets/Imagens/Imagens_game/luffy.jpg',
-     './assets/Imagens/Imagens_game/zoro.jpg',
+ './assets/Imagens/Imagens_game/sengoku.jpg',
+ './assets/Imagens/Imagens_game/akainu.jpg',
+ './assets/Imagens/Imagens_game/barba negra.jpg',
+ './assets/Imagens/Imagens_game/oden.jpg',
+ './assets/Imagens/Imagens_game/dragon.jpg',
+ './assets/Imagens/Imagens_game/rayleigh.jpg',
+ './assets/Imagens/Imagens_game/mihawk.jpg',
+ './assets/Imagens/Imagens_game/beckman.jpg',
+ './assets/Imagens/Imagens_game/luffy.jpg',
+ './assets/Imagens/Imagens_game/zoro.jpg',
 
-     './assets/Imagens/Imagens_game/kaido.jpg',
-     './assets/Imagens/Imagens_game/barba branca.jpg',
-     './assets/Imagens/Imagens_game/roger.jpg',
-     './assets/Imagens/Imagens_game/shanks.jpg',
-     './assets/Imagens/Imagens_game/garp.jpg',
-    ];
+ './assets/Imagens/Imagens_game/kaido.jpg',
+ './assets/Imagens/Imagens_game/barba branca.jpg',
+ './assets/Imagens/Imagens_game/roger.jpg',
+ './assets/Imagens/Imagens_game/shanks.jpg',
+ './assets/Imagens/Imagens_game/garp.jpg',
+];
 
-    let numeroAleatorio = 0
-    let limiteSorteio = 0;
-    let verificaFinalGame = 0;
-    let pontuacao = 0;
+let numeroAleatorio = 0
+let limiteSorteio = 0;
+let verificaFinalGame = 0;
+let pontuacao = 0;
+const listaPersonagens = [];
 
-    game_personagens_finalizarJogo.style.display = 'none';
+game_personagens_finalizarJogo.style.display = 'none';
 
-    function sortearIMG () {
-        limiteSorteio++
+function sortearIMG () {
+    limiteSorteio++
 
-        if(verificaFinalGame != 6) {
-            if(limiteSorteio <= 9) {
-            numeroAleatorio = Math.floor(Math.random() * 89);
-            sorteio.src = listaImg[numeroAleatorio];
-            }
-        } 
+    if(verificaFinalGame != 6) {
+        if(limiteSorteio <= 9) {
+        numeroAleatorio = Math.floor(Math.random() * 89);
+        listaPersonagens.push(numeroAleatorio);
+        sorteio.src = listaImg[numeroAleatorio];
+        }
+    } 
+}
+
+function contabilizaPonto() {
+    if(numeroAleatorio >= 0 && numeroAleatorio <= 5) {
+        pontuacao = pontuacao + 1
     }
 
-    function contabilizaPonto() {
-        if(numeroAleatorio >= 0 && numeroAleatorio <= 5) {
-            pontuacao = pontuacao + 1
-        }
-
-        if(numeroAleatorio >= 6 && numeroAleatorio <= 12) {
-            pontuacao = pontuacao + 2
-        }
-
-        if(numeroAleatorio >= 13 && numeroAleatorio <= 18) {
-            pontuacao = pontuacao + 3
-        }
-
-        if(numeroAleatorio >= 19 && numeroAleatorio <= 30) {
-            pontuacao = pontuacao + 4
-        }
-
-        if(numeroAleatorio >= 31 && numeroAleatorio <= 41) {
-            pontuacao = pontuacao + 5
-        }
-
-        if(numeroAleatorio >= 42 && numeroAleatorio <= 55) {
-            pontuacao = pontuacao + 6
-        }
-
-        if(numeroAleatorio >= 56 && numeroAleatorio <= 67) {
-            pontuacao = pontuacao + 7
-        }
-
-        if(numeroAleatorio >= 68 && numeroAleatorio <= 73) {
-            pontuacao = pontuacao + 8
-        }
-
-        if(numeroAleatorio >= 74 && numeroAleatorio <= 83) {
-            pontuacao = pontuacao + 9
-        }
-
-        if(numeroAleatorio >= 84 && numeroAleatorio <= 89) {
-            pontuacao = pontuacao + 10
-        }
-        console.log(pontuacao)
+    if(numeroAleatorio >= 6 && numeroAleatorio <= 12) {
+        pontuacao = pontuacao + 2
     }
 
-    function verificaFinal() {
-        if(verificaFinalGame == 6) {
-            button.innerHTML = '<a href="./dashboard.html">DASHBOARD</a>';
-            div_img.style.display = 'none';
-            game_personagens_finalizarJogo.style.display = 'block';
-        }
+    if(numeroAleatorio >= 13 && numeroAleatorio <= 18) {
+        pontuacao = pontuacao + 3
     }
 
-    let contadorCapitao = 0;
-    function atualizaImg_Capitao() {
-        contabilizaPonto()
-        contadorCapitao++;
-        verificaFinalGame++;
-
-        if(contadorCapitao <= 1) {
-            img_capitao.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 19 && numeroAleatorio <= 30) {
+        pontuacao = pontuacao + 4
     }
 
-    let contadorCombatente = 0;
-    function atualizaImg_Combatente() {
-        contabilizaPonto()
-        contadorCombatente++;
-        verificaFinalGame++;
-
-        if(contadorCombatente <= 1) {
-            img_combatente.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 31 && numeroAleatorio <= 41) {
+        pontuacao = pontuacao + 5
     }
 
-    let contadorNavegador = 0;
-    function atualizaImg_Navegador() {
-        contabilizaPonto()
-        contadorNavegador++
-        verificaFinalGame++;
-
-        if(contadorNavegador <= 1) {
-            img_navegador.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 42 && numeroAleatorio <= 55) {
+        pontuacao = pontuacao + 6
     }
 
-    let contadorCarpinteiro = 0;
-    function atualizaImg_Carpinteiro() {
-        contabilizaPonto()
-        contadorCarpinteiro++;
-        verificaFinalGame++;
-
-        if(contadorCarpinteiro <= 1) {
-            img_carpinteiro.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 56 && numeroAleatorio <= 67) {
+        pontuacao = pontuacao + 7
     }
 
-    let contadorCozinheiro = 0;
-    function atualizaImg_Cozinheiro() {
-        contabilizaPonto()
-        contadorCozinheiro++;
-        verificaFinalGame++;
-
-        if(contadorCozinheiro <= 1) {
-            img_cozinheiro.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 68 && numeroAleatorio <= 73) {
+        pontuacao = pontuacao + 8
     }
 
-    let contadorMedico = 0;
-    function atualizaImg_Medico() {
-        contabilizaPonto()
-        contadorMedico++
-        verificaFinalGame++;
-
-        if(contadorMedico <= 1) {
-            img_medico.src = listaImg[numeroAleatorio];
-        }
-
-        verificaFinal()
+    if(numeroAleatorio >= 74 && numeroAleatorio <= 83) {
+        pontuacao = pontuacao + 9
     }
+
+    if(numeroAleatorio >= 84 && numeroAleatorio <= 89) {
+        pontuacao = pontuacao + 10
+    }
+    console.log(pontuacao)
+}
+
+function verificaFinal() {
+    if(verificaFinalGame == 6) {
+        button.innerHTML = '<a href="./dashboard.html">DASHBOARD</a>';
+        div_img.style.display = 'none';
+        game_personagens_finalizarJogo.style.display = 'block';
+        fetchQuiz();
+    }
+}
+
+let contadorCapitao = 0;
+let contadorPersonagem = 0;
+function atualizaImg_Capitao() {
+    contabilizaPonto()
+    contadorCapitao++;
+    verificaFinalGame++;
+
+    if(contadorCapitao <= 1) {
+        img_capitao.src = listaImg[numeroAleatorio];
+        contadorPersonagem = numeroAleatorio
+    }
+
+    verificaFinal()
+}
+
+let contadorCombatente = 0;
+function atualizaImg_Combatente() {
+    contabilizaPonto()
+    contadorCombatente++;
+    verificaFinalGame++;
+
+    if(contadorCombatente <= 1) {
+        img_combatente.src = listaImg[numeroAleatorio];
+    }
+
+    verificaFinal()
+}
+
+let contadorNavegador = 0;
+function atualizaImg_Navegador() {
+    contabilizaPonto()
+    contadorNavegador++
+    verificaFinalGame++;
+
+    if(contadorNavegador <= 1) {
+        img_navegador.src = listaImg[numeroAleatorio];
+    }
+
+    verificaFinal()
+}
+
+let contadorCarpinteiro = 0;
+function atualizaImg_Carpinteiro() {
+    contabilizaPonto()
+    contadorCarpinteiro++;
+    verificaFinalGame++;
+
+    if(contadorCarpinteiro <= 1) {
+        img_carpinteiro.src = listaImg[numeroAleatorio];
+    }
+
+    verificaFinal()
+}
+
+let contadorCozinheiro = 0;
+function atualizaImg_Cozinheiro() {
+    contabilizaPonto()
+    contadorCozinheiro++;
+    verificaFinalGame++;
+
+    if(contadorCozinheiro <= 1) {
+        img_cozinheiro.src = listaImg[numeroAleatorio];
+    }
+
+    verificaFinal()
+}
+
+let contadorMedico = 0;
+function atualizaImg_Medico() {
+    contabilizaPonto()
+    contadorMedico++
+    verificaFinalGame++;
+
+    if(contadorMedico <= 1) {
+        img_medico.src = listaImg[numeroAleatorio];
+    }
+
+    verificaFinal()
+}
 </script>
