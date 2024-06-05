@@ -23,24 +23,24 @@
                 <div class="content_kpi">
                     <div class="content_kpi_info" id="kpi_media">
                         <div class="content_kpi_texto">
-                            <span>A media dos participantes foi de: 600</span>
+                            <span>A media dos participantes foi de: <span id="mediaParticipantes"></span></span>
                         </div>
                     </div>
 
                     <div class="content_kpi_info" id="kpi_resultado">
                         <div class="content_kpi_texto">
-                            <span>Sua pontuação foi de 800, maior de 90% dos usuarios</span>
+                            <span>Sua pontuação foi de <span id="pontuacaoParticipante"></span></span>
                         </div>
                     </div>
 
                     <div class="content_kpi_info" id="kpi_personagem">
                         <div class="content_kpi_texto">
                             <div class="content_kpi_texto_filho">
-                                <span>Capitão mais escolhido: Zoro</span>
+                                <span>Capitão mais escolhido: <span id="capitaoMaisEscolhido"></span></span>
                             </div>
 
                             <div class="content_kpi_texto_filho">
-                                <span>Capitão menos escolhido: Spandan</span>
+                                <span>Capitão menos escolhido: <span id="capitaoMenosEscolhido"></span></span>
                             </div>
                         </div>
                     </div>
@@ -67,6 +67,40 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fkUsuario = sessionStorage.getItem('ID_USUARIO');
+
+        if (fkUsuario) {
+            obterMediaParticipantes(fkUsuario);
+            obterPontuacaoParticipante(fkUsuario);
+        }
+    });
+
+    function fetchData(route, body) {
+        return fetch(route, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json", 
+            },
+            body: JSON.stringify(body), 
+        }).then(response => response.json()); 
+    }
+
+    function obterMediaParticipantes(fkUsuario) {
+        fetchData('/dadosRoute/mediaParticipantes', { fkUsuarioServer: fkUsuario })
+            .then(data => {
+                document.getElementById('mediaParticipantes').innerText = data[0].mediaUsuarios + " pontos";
+            }).catch(error => console.error('Erro ao obter média de acertos do usuário:', error));
+    }
+
+    function obterPontuacaoParticipante(fkUsuario) {
+        fetchData('/dadosRoute/pontuacaoParticipante', { fkUsuarioServer: fkUsuario })
+            .then(data => {
+                document.getElementById('pontuacaoParticipante').innerText = data[0].pontuacao;
+            }).catch(error => console.error('Erro ao obter média de acertos dos usuários:', error));
+    }   
+
+   
     const ctx = document.getElementById('myChart');
     const ctx2 = document.getElementById('myCharta');
 
@@ -101,7 +135,7 @@
         labels: ['Zoro', 'Luffy', 'Barba Branca'],
         datasets: [{
           backgroundColor: '#2D8BBA',
-          label: 'Capitãos mais escolhidos',
+          label: 'Capitães mais escolhidos',
           data: [12, 19, 3],
           borderWidth: 1
         }]

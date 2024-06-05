@@ -18,5 +18,4 @@ function fetchQuiz() {
     }).then(res => {
         console.log(res);
     })
-    console.log(`Sua pontuacao: ${qtdAcertos}`);
 }

@@ -184,6 +184,7 @@
  './assets/Imagens/Imagens_game/roger.jpg',
  './assets/Imagens/Imagens_game/shanks.jpg',
  './assets/Imagens/Imagens_game/garp.jpg',
+ './assets/Imagens/Imagens_game/xebec.jpg'
 ];
 
 let numeroAleatorio = 0
@@ -199,7 +200,7 @@ function sortearIMG () {
 
     if(verificaFinalGame != 6) {
         if(limiteSorteio <= 9) {
-        numeroAleatorio = Math.floor(Math.random() * 89);
+        numeroAleatorio = Math.floor(Math.random() * 90);
         listaPersonagens.push(numeroAleatorio);
         sorteio.src = listaImg[numeroAleatorio];
         }
@@ -243,10 +244,9 @@ function contabilizaPonto() {
         pontuacao = pontuacao + 9
     }
 
-    if(numeroAleatorio >= 84 && numeroAleatorio <= 89) {
+    if(numeroAleatorio >= 84 && numeroAleatorio <= 90) {
         pontuacao = pontuacao + 10
     }
-    console.log(pontuacao)
 }
 
 function verificaFinal() {
