@@ -58,10 +58,12 @@
 
         if(senhaVar.length < 6) {
             content_erro.innerHTML = 'Senha deve conter pelo menos 6 digitos'
+            return false;
         }
 
         if ((emailVar.indexOf("@") || emailVar.indexOf(".")) == -1) {
             content_erro.innerHTML = `Email deve conter "@" e "." !`;
+            return false;
         }
 
         console.log("FORM LOGIN: ", emailVar);
@@ -82,6 +84,8 @@
             if (resposta.ok) {
                 console.log(resposta);
 
+                content_erro.innerHTML = 'Login realizado com sucesso!'
+
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
@@ -98,7 +102,7 @@
             } else {
 
                 console.log("Houve um erro ao tentar realizar o login!");
-
+                content_erro.innerHTML = 'Senha ou email invalido!'
                 resposta.text().then(texto => {
                     console.error(texto);
                 });

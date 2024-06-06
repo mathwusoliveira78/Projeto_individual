@@ -84,7 +84,13 @@
 </html>
 
 <script>
-    const listaImg = 
+const listaCapitao = 
+[
+'Hiruluk', 'Tom', 'Streusen', 'Paulie', 'Patty', 'Kureha', 'Kyros', 'Bellamy', 'Hatchan', 'Crocus', 'Pudding', 'Aladdin', 'Hogback', 'Ivankov', 'Zeff', 'Nami', 'Cavendish', 'Tashigi', 'Senhorpink', 'Neptune', 'Kin', 'Caesar', 'Buggy', 'Perona', 'Laffite', 'Chopper', 'Docq', 'Smoker', 'Franky', 'Moria', 'Clay', 'Hody', 'Apoo', 'Crocodile', 'Koby', 'Momonga', 'Vergo', 'Pageone', 'Bepo', 'Perospero', 'Cracker', 'Usopp', 'Bonney', 'Hancock', 'Ace', 'Robin', 'Kaku', 'Brook', 'Jinbei', 'Enel', 'Bartolomeu', 'Hawkins', 'Burgers', 'Kuma', 'Killer', 'Jozu', 'Queen', 'Law', 'Fujitora', 'Sanji', 'Katakuri', 'Sabo', 'Vista', 'Rob Lucci', 'Doflamingo', 'Marco', 'Magellan', 'Aokiji', 'Kizaru', 'Yasopp', 'Kid', 'Bigmom', 'King', 'Sengoku', 'Akainu', 'Barba Negra', 'Oden', 'Dragon', 'Rayleigh', 'Mihawk', 'Beckman', 'Luffy', 'Zoro', 'Kaido', 'Barba Branca', 'Roger', 'Shanks', 'Garp', 'Xebec'
+]
+
+
+const listaImg = 
 [
  './assets/Imagens/Imagens_game/hiruluk.jpg',
  './assets/Imagens/Imagens_game/tom.jpg',
@@ -258,7 +264,7 @@ function verificaFinal() {
     }
 }
 
-let contadorPersonagem = 0;
+let capitaoEscolhido = '';
 let contadorCapitao = 0;
 function atualizaImg_Capitao() {
     contabilizaPonto()
@@ -267,7 +273,7 @@ function atualizaImg_Capitao() {
 
     if(contadorCapitao <= 1) {
         img_capitao.src = listaImg[numeroAleatorio];
-        contadorPersonagem = numeroAleatorio
+        capitaoEscolhido = listaCapitao[numeroAleatorio - 1];
     }
 
     verificaFinal()

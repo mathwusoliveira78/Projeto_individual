@@ -23,13 +23,13 @@
                 <div class="content_kpi">
                     <div class="content_kpi_info" id="kpi_media">
                         <div class="content_kpi_texto">
-                            <span>A media dos participantes foi de: <span id="mediaParticipantes"></span></span>
+                            <span>A media dos participantes e de <span id="mediaParticipantes"></span></span>
                         </div>
                     </div>
 
                     <div class="content_kpi_info" id="kpi_resultado">
                         <div class="content_kpi_texto">
-                            <span>Sua pontuação foi de <span id="pontuacaoParticipante"></span></span>
+                            <span>Sua pontuação foi de <span id="pontuacaoParticipante"></span> pontos </span>
                         </div>
                     </div>
 
@@ -49,13 +49,7 @@
                 <div class="content_grafico">
                     <div class="grafico">
                         <div class="grafico_canvas">
-                            <canvas id="myChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="grafico2">
-                        <div class="grafico_canvas">
-                            <canvas id="myCharta"></canvas>
+                            <canvas id="myChartCanvas"></canvas>
                         </div>
                     </div>
                 </div>
@@ -67,12 +61,17 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
+    let chartCapitao;
+
     document.addEventListener('DOMContentLoaded', function () {
         const fkUsuario = sessionStorage.getItem('ID_USUARIO');
 
         if (fkUsuario) {
             obterMediaParticipantes(fkUsuario);
             obterPontuacaoParticipante(fkUsuario);
+            obterCapitaoMaisEscolhido(fkUsuario);
+            obterCapitaoMenosEscolhido(fkUsuario);
+            obterDadosGraficos(fkUsuario);
         }
     });
 
@@ -100,45 +99,76 @@
             }).catch(error => console.error('Erro ao obter média de acertos dos usuários:', error));
     }   
 
-   
-    const ctx = document.getElementById('myChart');
-    const ctx2 = document.getElementById('myCharta');
+    function obterCapitaoMaisEscolhido(fkUsuario) {
+        fetchData('/dadosRoute/capitaoMaisEscolhido', { fkUsuarioServer: fkUsuario })
+            .then(data => {
+                document.getElementById('capitaoMaisEscolhido').innerText = data[0].capitao;
+            }).catch(error => console.error('Erro ao obter média de acertos dos usuários:', error));
+    }
 
-    Chart.defaults.color = 'white';
-    Chart.defaults.font.size = 15;
-    Chart.defaults.borderColor = 'black';
-    Chart.defaults.font.family = 'Poetsen One'; 
-  
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['>= 6', '>= 18', '>= 36', '>= 48', '>=60'],
-        datasets: [{
-          backgroundColor: '#F4B01E',
-          label: 'Media de pontuação dos participantes',
-          data: [4, 8, 16, 8, 2],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+    function obterCapitaoMenosEscolhido(fkUsuario) {
+        fetchData('/dadosRoute/capitaoMenosEscolhido', { fkUsuarioServer: fkUsuario })
+            .then(data => {
+                document.getElementById('capitaoMenosEscolhido').innerText = data[0].menos;
+            }).catch(error => console.error('Erro ao obter média de acertos dos usuários:', error));
+    }
+
+    function obterDadosGraficos(fkUsuario) {
+        const numTentativas = 3; // numero fixo de tentativas a serem exibidas
+
+        fetchData('/dadosRoute/rankCapitao', { fkUsuarioServer: fkUsuario })
+            .then(data => {
+                console.log('Dados brutos:', data);
+
+                const labels = [];
+                const capitaesMaisEscolhidos = [];
+
+                data.forEach((item) => {
+                    labels.push(item.escolhidos);
+                    capitaesMaisEscolhidos.push(item.frequencia);
+                });
+
+                console.log('Labels:', labels);
+                console.log('Capitaoes:', capitaesMaisEscolhidos);
+
+                plotarGrafico('myChartCanvas', labels, capitaesMaisEscolhidos, 'rgba(50, 255, 90, 0.5)', 'rgba(10, 50, 255, 0.5)', chartCapitao);
+
+            }).catch(error => console.error('Erro ao obter dados dos gráficos:', error));
+    }
+
+    function plotarGrafico(elementId, labels, data1, label1, backgroundColor1, chartInstance) {
+        const ctx = document.getElementById(elementId).getContext('2d');
+
+        if (chartInstance) {
+            chartInstance.destroy();
         }
-      }
-    });
 
-    new Chart(ctx2, {
-      type: 'bar',
-      data: {
-        labels: ['Zoro', 'Luffy', 'Barba Branca'],
-        datasets: [{
-          backgroundColor: '#2D8BBA',
-          label: 'Capitães mais escolhidos',
-          data: [12, 19, 3],
-          borderWidth: 1
-        }]
-      }
-    });
-  </script>
+        Chart.defaults.color = 'white';
+        Chart.defaults.font.size = 15;
+        Chart.defaults.borderColor = 'black';
+        Chart.defaults.font.family = 'Poetsen One';
+
+        chartInstance = new Chart(ctx, {
+            type: 'bar', 
+            data: {
+                labels: labels, 
+                datasets: [{
+                    label: 'Capitães mais escolhidos', 
+                    data: data1, 
+                    backgroundColor: '#F4B01E',  
+                    borderColor: 'White',
+                    borderWidth: 1 // largura da borda das barras
+                },]
+            },
+            options: {
+                scales: {
+                y: {
+            beginAtZero: true
+                }
+                }   
+            }
+        });
+
+        chartCapitao = chartInstance;
+    }
+ </script>

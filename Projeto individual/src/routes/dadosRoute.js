@@ -11,4 +11,17 @@ router.post("/pontuacaoParticipante", function(req, res) {
     dadosController.obterPontuacaoParticipante(req, res);
 });
 
+router.post("/capitaoMaisEscolhido", function(req, res) {
+    dadosController.obterCapitaoMaisEscolhido(req, res);
+});
+
+router.post("/capitaoMenosEscolhido", function(req, res) {
+    dadosController.obterCapitaoMenosEscolhido(req, res);
+});
+
+router.post("/rankCapitao", function(req, res) {
+    dadosController.obterRankCapitao(req, res);
+});
+
+
 module.exports = router;

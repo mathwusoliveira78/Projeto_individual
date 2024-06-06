@@ -11,7 +11,7 @@ function puxarUltimoID(fkUsuario) {
 function registrar(idResultadoGame, fkUsuario, fkGame, pontuacao, capitao) {
     var instrucaoSql = `
         INSERT INTO resultado_game (idResultadoGame, fkUsuario, fkGame, pontuacao, capitao)
-        VALUES (${idResultadoGame}, ${fkUsuario}, ${fkGame}, ${pontuacao}, ${capitao});
+        VALUES (${idResultadoGame}, ${fkUsuario}, ${fkGame}, ${pontuacao}, '${capitao}');
     `;
     console.log('Registrando dados da tentativa do quiz: ' + instrucaoSql);
     return database.executar(instrucaoSql);

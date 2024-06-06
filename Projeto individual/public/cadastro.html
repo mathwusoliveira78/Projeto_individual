@@ -70,16 +70,22 @@
 
     if(nomeVar.length < 3) {
       content_erro.innerHTML = 'Nome deve ter pelo menos 3 digitos!'
+
+      return false;
     } 
 
     if ((emailVar.indexOf("@") || emailVar.indexOf(".")) == -1) {
       content_erro.innerHTML = `Email deve conter "@" e "." !`;
+
+      return false;
     }
 
     if(senhaVar.length < 6) {
       content_erro.innerHTML = 'Senha deve conter pelo menos 6 digitos'
+      return false;
     } else if (senhaVar != confirmacaoSenhaVar) {
       content_erro.innerHTML = `A senha e confirmação devem ser iguais!`;
+      return false;
     }
 
     let verificaNumeroSenha = 0;
@@ -97,10 +103,12 @@
 
     if (verificaNumeroSenha == 0){
         content_erro.innerHTML = "Senha deve conter pelo menos um numero!"
+        return false;
     }
 
     if(verificaNumeroNome > 0) {
       content_erro.innerHTML = "Nome não deve conter numeros"
+      return false;
     }
 
     // Enviando o valor da nova input
@@ -121,7 +129,7 @@
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-          alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+          content_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
             window.location = "./login.html";

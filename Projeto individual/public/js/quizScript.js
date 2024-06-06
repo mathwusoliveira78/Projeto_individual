@@ -13,7 +13,7 @@ function fetchQuiz() {
             fkGameServer: idQuiz,
             fkUsuarioServer: ID_USUARIO,
             qtdAcertosServer: qtdAcertos,
-            capitaoServer: contadorPersonagem
+            capitaoServer: capitaoEscolhido
         })
     }).then(res => {
         console.log(res);
