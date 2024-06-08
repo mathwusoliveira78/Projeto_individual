@@ -17,8 +17,7 @@ create table usuario (
 );
 
 create table game (
-	idGame int primary key auto_increment,
-    time varchar(45)
+	idGame int primary key auto_increment
 ) auto_increment = 5000;
 
 create table resultado_game (
@@ -28,7 +27,8 @@ create table resultado_game (
     constraint fk_Usuario foreign key (fkUsuario) references usuario(idUsuario),
     constraint fk_Game foreign key (fkGame) references game(idGame),
     primary key(idResultadoGame, fkUsuario, fkGame),
-	pontuacao varchar(45)
+	pontuacao varchar(45),
+    capitao varchar(45)
 );
 
 select * from usuario;
